@@ -19,8 +19,14 @@ public class PlayAgainstEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_match;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_team",referencedColumnName = "id_team")
+    private TeamEntity teamEntity;
+
+    @Column(nullable = false)
     private int id_team_home;
 
+    @Column(nullable = false)
     private int id_team_other;
 
     private LocalDate datetime;

@@ -19,6 +19,10 @@ public class PlayerEntity {
     private String name_player;
     private int number_player;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_team",referencedColumnName = "id_team")
+    private TeamEntity teamEntity;
+
     @Column(nullable = false)
     private int id_team;
 }
