@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 @Builder
-public class MatchResponse {
+public class PlayAgainstResponse {
     private int id_team_home;
     private int id_team_other;
     private LocalDate datetime;
