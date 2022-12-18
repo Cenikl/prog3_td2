@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: PROG3_TD2
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /matches:
+    get:
+      tags:
+        - Match
+      summary: get all matches
+      operationId: getMatches
+      responses:
+        '200':
+          description: List of Matches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Play_against'
+        '500':
+          description: Internal server error
+  /teams:
+    get:
+      tags:
+        - Team
+      summary: get all teams
+      operationId: getTeams
+      responses:
+        '200':
+          description: List of Teams
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Team'
+        '500':
+          description: Internal server error
+  /players:
+    get:
+      tags:
+        - Players
+      summary: get all players
+      operationId: getPlayers
+      responses:
+        '200':
+          description: List of Players
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Player'
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Team:
+      type: object
+      properties:
+        id_team:
+          type: integer
+        name_team:
+          type: string
+        id_player:
+          type: array
+          items:
+            $ref: '#/components/schemas/Player'
+        id_sponsor:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sponsor'
+    Sponsor:
+      type: object
+      properties:
+        id_sponsor:
+          type: integer
+        name_sponsor:
+          type: string
+        id_team:
+          type: array
+          items:
+            $ref: '#/components/schemas/Team'
+    Player:
+      type: object
+      properties:
+        id_player:
+          type: integer
+        name_player:
+          type: string
+    Play_against:
+      type: object
+      properties:
+        id_team_home:
+          type: integer
+        id_team_other:
+          type: integer
+        datetime:
+          type: string
