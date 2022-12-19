@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class PlayerResponse {
-    private int id_player;
-    private String name_player;
+public class CreateTeamResponse {
+    private String name_team;
 }

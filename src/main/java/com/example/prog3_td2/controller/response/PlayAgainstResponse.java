@@ -1,6 +1,5 @@
 package com.example.prog3_td2.controller.response;
 
-import com.example.prog3_td2.model.TeamEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +12,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class PlayAgainstResponse {
-    private TeamEntity team_home;
-    private TeamEntity opponent;
+    private String team_home;
+    private String opponent;
     private LocalDate datetime;
 }
