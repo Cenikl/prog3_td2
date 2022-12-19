@@ -12,13 +12,4 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 public class PlayAgainstController {
-    private final PlayAgainstService service;
-    private final PlayAgainstRestMapper mapper;
-
-    @GetMapping("/matches")
-    public List<PlayAgainstResponse> getMatches() {
-        return service.getMatchs().stream()
-                .map(mapper::toRest)
-                .toList();
-    }
 }

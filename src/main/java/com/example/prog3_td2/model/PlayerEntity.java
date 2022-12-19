@@ -20,9 +20,7 @@ public class PlayerEntity {
     private int number_player;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_team",referencedColumnName = "id_team")
-    private TeamEntity teamEntity;
+    @JoinColumn(name = "player_team",nullable = false)
+    private TeamEntity player_team;
 
-    @Column(nullable = false)
-    private int id_team;
 }

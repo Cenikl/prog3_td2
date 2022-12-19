@@ -12,13 +12,4 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 public class PlayerController {
-    private final PlayerService service;
-    private final PlayerRestMapper mapper;
-
-    @GetMapping("/players")
-    public List<PlayerResponse> getPlayers() {
-        return service.getPlayers().stream()
-                .map(mapper::toRest)
-                .toList();
-    }
 }

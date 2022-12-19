@@ -20,15 +20,12 @@ public class TeamEntity {
     private int id_team;
     private String name_team;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "player")
-    @JoinColumn(name = "player_id", referencedColumnName = "id_player")
-    private List<PlayerEntity> playerEntityList;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "player")
+    private List<PlayerEntity> player;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "sponsor")
-    @JoinColumn(name = "sponsor_id", referencedColumnName = "id_sponsor")
-    private List<SponsorEntity> sponsorEntityList;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sponsor")
+    private List<SponsorEntity> sponsor;
 
-    private int id_player;
-
-    private int id_sponsor;
 }

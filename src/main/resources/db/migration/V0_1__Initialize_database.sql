@@ -1,21 +1,18 @@
 create table team
 (
-    id_team     serial,
+    id_team serial,
     name_team varchar,
-    id_player int,
-    id_sponsor int,
-    primary key (id_team),
-    constraint fk_id_player FOREIGN KEY (id_player) references player(id_player),
-    constraint fk_id_sponsor FOREIGN KEY (id_sponsor) references sponsor(id_sponsor)
+    player int,
+    sponsor int,
+    primary key (id_team)
 );
 
 create table sponsor
 (
     id_sponsor serial,
-    name_sponsor varchar,
-    id_team int not null,
-    primary key (id_sponsor),
-    constraint fk_id_team FOREIGN KEY (id_team) references team(id_team)
+    name_sponsor int,
+    sponsor_team int not null,
+    primary key (id_sponsor)
 );
 
 create table player
@@ -23,19 +20,27 @@ create table player
     id_player serial,
     name_player varchar,
     number_player int,
-    id_team int not null,
-    primary key (id_player),
-    constraint fk_id_team FOREIGN KEY (id_team) references team(id_team)
+    player_team int not null,
+    primary key (id_player)
 );
 
 create table play_against
 (
     id_match int,
-    id_team_home int,
-    id_team_other int,
+    team_home int,
+    opponent int,
     datetime date,
     stadium varchar,
-    primary key (id_match),
-    constraint fk_id_team_home FOREIGN KEY (id_team_home) references team(id_team),
-    constraint fk_id_team_other FOREIGN KEY (id_team_other) references team(id_team)
-)
+    primary key (id_match)
+);
+
+alter table team add constraint fk_id_player FOREIGN KEY (player) references player(id_player);
+alter table team add constraint fk_id_sponsor FOREIGN KEY (sponsor) references sponsor(id_sponsor);
+
+alter table sponsor add constraint fk_id_team FOREIGN KEY (sponsor_team) references team(id_team);
+
+alter table player add constraint fk_id_team FOREIGN KEY (player_team) references team(id_team);
+
+alter table play_against add constraint fk_id_team_home FOREIGN KEY (team_home) references team(id_team);
+alter table play_against add constraint fk_id_team_other FOREIGN KEY (opponent) references team(id_team);
+

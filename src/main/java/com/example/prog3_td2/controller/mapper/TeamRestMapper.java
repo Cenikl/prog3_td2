@@ -6,10 +6,4 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TeamRestMapper {
-    public TeamResponse toRest(TeamEntity domain) {
-        return TeamResponse.builder()
-                .
-                .id_sponsor(domain.getId_sponsor())
-                .build();
-    }
 }

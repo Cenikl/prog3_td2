@@ -22,9 +22,6 @@ public class SponsorEntity {
     private String name_sponsor;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_team",referencedColumnName = "id_team")
-    private List<TeamEntity> teamEntity;
-
-    @Column(nullable = false)
-    private int id_team;
+    @JoinColumn(name = "sponsor_team",nullable = false)
+    private List<TeamEntity> sponsor_team;
 }

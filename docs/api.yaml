@@ -69,11 +69,11 @@ components:
     Team:
       type: object
       properties:
-        player(s):
+        player:
           type: array
           items:
             $ref: '#/components/schemas/Player'
-        sponsor(s):
+        sponsor:
           type: array
           items:
             $ref: '#/components/schemas/Sponsor'

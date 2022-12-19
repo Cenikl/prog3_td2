@@ -20,16 +20,13 @@ public class PlayAgainstEntity {
     private int id_match;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_team",referencedColumnName = "id_team")
-    private TeamEntity teamEntity;
+    @JoinColumn(name = "team_home")
+    private TeamEntity team_home;
 
-    @Column(nullable = false)
-    private int id_team_home;
-
-    @Column(nullable = false)
-    private int id_team_other;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "opponent")
+    private TeamEntity opponent;
 
     private LocalDate datetime;
-
     private String stadium;
 }

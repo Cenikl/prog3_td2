@@ -12,13 +12,4 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 public class TeamController {
-    private final TeamService service;
-    private final TeamRestMapper mapper;
-
-    @GetMapping("/teams")
-    public List<TeamResponse> getBooks() {
-        return service.getTeams().stream()
-                .map(mapper::toRest)
-                .toList();
-    }
 }
