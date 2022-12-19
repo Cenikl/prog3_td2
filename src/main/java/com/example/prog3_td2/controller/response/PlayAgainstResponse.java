@@ -13,8 +13,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class PlayAgainstResponse {
-    private TeamEntity teamEntity;
-    private int id_team_home;
-    private int id_team_other;
+    private TeamEntity team_home;
+    private TeamEntity opponent;
     private LocalDate datetime;
 }

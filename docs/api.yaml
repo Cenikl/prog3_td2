@@ -87,10 +87,6 @@ components:
           type: integer
         name_sponsor:
           type: string
-        id_team:
-          type: array
-          items:
-            $ref: '#/components/schemas/Team'
     Player:
       type: object
       properties:
@@ -101,11 +97,13 @@ components:
     Play_against:
       type: object
       properties:
-        id_team_home:
+        id_match:
+          type: integer
+        team_home:
           type: array
           items:
             $ref: '#/components/schemas/MatchTeam'
-        id_opponent:
+        opponent:
           type: array
           items:
             $ref: '#/components/schemas/MatchTeam'

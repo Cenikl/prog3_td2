@@ -14,8 +14,8 @@ import java.util.List;
 @Data
 @Builder
 public class TeamResponse {
-    private List<PlayerEntity> playerEntityList;
-    private List<SponsorEntity> sponsorEntityList;
-    private int id_player;
-    private int id_sponsor;
+    private int id_team;
+    private String name_team;
+    private List<PlayerEntity> player;
+    private List<SponsorEntity> sponsor;
 }

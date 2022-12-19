@@ -26,7 +26,7 @@ create table player
 
 create table play_against
 (
-    id_match int,
+    id_match serial,
     team_home int,
     opponent int,
     datetime date,

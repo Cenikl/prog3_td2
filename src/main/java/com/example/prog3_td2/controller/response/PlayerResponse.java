@@ -12,6 +12,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PlayerResponse {
     private int id_player;
-    private TeamEntity teamEntity;
     private String name_player;
 }
